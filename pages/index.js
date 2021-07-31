@@ -1,6 +1,6 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import {} from "react-icons/fa";
+import { FaMoon, FaSearch } from "react-icons/fa";
 
 export default function Home() {
   return (
@@ -13,7 +13,30 @@ export default function Home() {
       </Head>
       <nav className={styles.navigation}>
         <h4>Where in the world?</h4>
+        <button>
+          <FaMoon className={styles.buttonIcon} />
+          Dark mode
+        </button>
       </nav>
+      <div className={styles.inputAndFilterContainer}>
+        <div className={styles.inputContainer}>
+          <FaSearch />
+          <input type="text" placeholder="Search for a country" />
+        </div>
+        <div className={styles.filter}>
+          <select>
+            <option selected disabled>
+              Filter by Region
+            </option>
+            <option>Africa</option>
+            <option>America</option>
+            <option>Asia</option>
+            <option>Europe</option>
+            <option>Oceania</option>
+          </select>
+        </div>
+      </div>
+      <div className={styles.countriesContainer}></div>
     </div>
   );
 }
