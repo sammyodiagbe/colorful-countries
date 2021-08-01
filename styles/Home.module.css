@@ -1,1 +1,91 @@
-/* No CSS *//*# sourceMappingURL=Home.module.css.map */
+div.container {
+  background: #fafafa;
+  color: #111517;
+  min-height: 100vh;
+}
+
+div.container nav.navigation {
+  background: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1.8em 1em;
+  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.9);
+          box-shadow: 0 0 1px rgba(0, 0, 0, 0.9);
+}
+
+div.container nav.navigation button {
+  background: transparent;
+  vertical-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+div.container nav.navigation button .buttonIcon {
+  margin-right: 0.5em;
+}
+
+div.container div.inputAndFilterContainer {
+  padding: 1.8em 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+div.container div.inputAndFilterContainer div.inputContainer {
+  -webkit-box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.1);
+  background: #fafafa;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 2.8em;
+  padding: 0 2em;
+}
+
+div.container div.inputAndFilterContainer div.inputContainer .buttonIcon {
+  margin-right: 0;
+}
+
+div.container div.inputAndFilterContainer div.inputContainer input {
+  padding: 1.4em 2em;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+div.container div.filter {
+  width: 50%;
+  -webkit-box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.1);
+  background: #fafafa;
+}
+
+div.container div.filter select {
+  padding: 1.2em 0;
+  background: transparent;
+  display: block;
+  width: 100%;
+}
+
+div.container div.filter select option {
+  padding: 1.4em 2em;
+}
+/*# sourceMappingURL=Home.module.css.map */

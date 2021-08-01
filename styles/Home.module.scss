@@ -1,0 +1,64 @@
+@import "base.scss";
+
+div.container {
+  background: $light-mode-background;
+  color: $light-mode-text;
+  min-height: 100vh;
+  nav.navigation {
+    background: $dark-mode-text-and-light-mode-elements;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: $padding;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.9);
+    // button
+    button {
+      background: transparent;
+      vertical-align: center;
+      display: flex;
+      align-items: center;
+      .buttonIcon {
+        margin-right: 0.5em;
+        // fill: none;
+        // stroke-width: 1px;
+        // stroke:
+      }
+    }
+  }
+
+  div.inputAndFilterContainer {
+    padding: $padding;
+    display: flex;
+    flex-direction: column;
+    div.inputContainer {
+      box-shadow: $input-box-shadow;
+      background: $light-mode-background;
+      display: flex;
+      align-items: center;
+      margin-bottom: $margin-bottom;
+      padding: 0 2em;
+      .buttonIcon {
+        margin-right: 0;
+      }
+      input {
+        padding: $input-padding;
+        flex: 1;
+      }
+    }
+  }
+  div.filter {
+    width: 50%;
+    box-shadow: $input-box-shadow;
+    background: $light-mode-background;
+    select {
+      padding: 1.2em 0;
+      background: transparent;
+      display: block;
+      width: 100%;
+      option {
+        padding: $input-padding;
+      }
+    }
+  }
+}

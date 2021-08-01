@@ -10,7 +10,6 @@ export default function Home() {
   const toggleTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
-    console.log(theme);
   };
   return (
     <ThemeContext.Provider value={{ toggleTheme }}>
@@ -24,9 +23,11 @@ export default function Home() {
         <Nav />
         <div className={styles.inputAndFilterContainer}>
           <div className={styles.inputContainer}>
-            <FaSearch />
+            <FaSearch className={styles.buttonIcon} />
             <input type="text" placeholder="Search for a country" />
           </div>
+
+          {/* build custom select */}
           <div className={styles.filter}>
             <select defaultValue={"Filter by Region"}>
               <option disabled>Filter by Region</option>
