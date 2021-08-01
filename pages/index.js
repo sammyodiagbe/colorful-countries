@@ -8,9 +8,9 @@ import { useState } from "react";
 export default function Home() {
   const [theme, setTheme] = useState("light");
   const toggleTheme = () => {
-    console.log("check");
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
+    console.log(theme);
   };
   return (
     <ThemeContext.Provider value={{ toggleTheme }}>
