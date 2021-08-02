@@ -1,0 +1,19 @@
+@import "base.scss";
+
+div.country {
+  margin-bottom: 4em;
+  box-shadow: $input-box-shadow;
+  border-radius: 5px;
+  overflow: hidden;
+  width: 80%;
+  div.flagContainer {
+    img {
+      max-width: 100%;
+      object-fit: fill;
+    }
+  }
+
+  div.details {
+    padding: $padding;
+  }
+}

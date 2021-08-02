@@ -6,6 +6,7 @@ export default async function handler(req, res) {
       coutries: data,
     });
   } catch (err) {
+    console.log(err);
     return res.status(400).json({
       message: "Something went wrong",
     });

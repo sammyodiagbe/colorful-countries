@@ -1,8 +1,9 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AAEA,AAAA,GAAG,AAAA,QAAQ,CAAC;EACV,aAAa,EAAE,GAAG;EAClB,UAAU,ECGO,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,GAAG,CAAC,kBAAkB;EDF/C,aAAa,EAAE,GAAG;EAClB,QAAQ,EAAE,MAAM;EAChB,KAAK,EAAE,GAAG;CAWX;;AAhBD,AAOI,GAPD,AAAA,QAAQ,CAMT,GAAG,AAAA,cAAc,CACf,GAAG,CAAC;EACF,SAAS,EAAE,IAAI;EACf,UAAU,EAAE,IAAI;CACjB;;AAVL,AAaE,GAbC,AAAA,QAAQ,CAaT,GAAG,AAAA,QAAQ,CAAC;EACV,OAAO,ECVD,KAAK,CAAC,GAAG;CDWhB",
     "sources": [
-        "Country.module.scss"
+        "Country.module.scss",
+        "_base.scss"
     ],
     "names": [],
     "file": "Country.module.css"

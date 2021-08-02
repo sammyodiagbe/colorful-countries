@@ -4,13 +4,19 @@ import { FaSearch } from "react-icons/fa";
 import Nav from "../layouts/nav";
 import { ThemeContext } from "../context/context";
 import { useState } from "react";
+import axios from "axios";
+import Country from "../layouts/country";
 
-export default function Home() {
+export default function Home({ country_data }) {
   const [theme, setTheme] = useState("light");
   const toggleTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
   };
+
+  const renderCountries = country_data.map((country, index) => {
+    return <Country key={index} data={country} />;
+  });
   return (
     <ThemeContext.Provider value={{ toggleTheme }}>
       <div className={styles.container}>
@@ -39,8 +45,25 @@ export default function Home() {
             </select>
           </div>
         </div>
-        <div className={styles.countriesContainer}></div>
+        <div className={styles.countriesContainer}>{renderCountries}</div>
       </div>
     </ThemeContext.Provider>
   );
+}
+
+export async function getStaticProps(context) {
+  let country_data;
+  try {
+    let res = await axios.get(
+      "https://restcountries.eu/rest/v2/all?fields=name;region;capital;flag;population"
+    );
+    country_data = res.data;
+  } catch (err) {
+    console.log("something broke, ", err);
+  }
+
+  console.log(country_data);
+  return {
+    props: { country_data },
+  };
 }

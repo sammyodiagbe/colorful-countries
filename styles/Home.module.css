@@ -89,4 +89,15 @@ div.container div.filter select {
 div.container div.filter select option {
   padding: 1.4em 2em;
 }
+
+div.container div.countriesContainer {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
 /*# sourceMappingURL=Home.module.css.map */
