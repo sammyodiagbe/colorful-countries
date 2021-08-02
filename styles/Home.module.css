@@ -16,8 +16,8 @@ div.container nav.navigation {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 1.8em 1em;
-  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.9);
-          box-shadow: 0 0 1px rgba(0, 0, 0, 0.9);
+  -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
 }
 
 div.container nav.navigation button {
@@ -62,6 +62,7 @@ div.container div.inputAndFilterContainer div.inputContainer {
 
 div.container div.inputAndFilterContainer div.inputContainer .buttonIcon {
   margin-right: 0;
+  fill: #858585;
 }
 
 div.container div.inputAndFilterContainer div.inputContainer input {

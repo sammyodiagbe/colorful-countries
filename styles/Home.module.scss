@@ -11,7 +11,7 @@ div.container {
     justify-content: space-between;
 
     padding: $padding;
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0.9);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
     // button
     button {
       background: transparent;
@@ -40,6 +40,7 @@ div.container {
       padding: 0 2em;
       .buttonIcon {
         margin-right: 0;
+        fill: $light-mode-input;
       }
       input {
         padding: $input-padding;
