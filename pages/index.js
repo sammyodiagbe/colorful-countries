@@ -6,19 +6,14 @@ import { ThemeContext } from "../context/context";
 import { useState } from "react";
 import axios from "axios";
 import Country from "../layouts/country";
+import Layout from "../layouts/Layout";
 
 export default function Home({ country_data }) {
-  const [theme, setTheme] = useState("light");
-  const toggleTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
-    setTheme(newTheme);
-  };
-
   const renderCountries = country_data.map((country, index) => {
     return <Country key={index} data={country} />;
   });
   return (
-    <ThemeContext.Provider value={{ toggleTheme }}>
+    <Layout>
       <div className={styles.container}>
         <Head>
           <title>Colorful Countries</title>
@@ -26,7 +21,6 @@ export default function Home({ country_data }) {
           <meta name="author" content="Odiagbe Samson Osaro" />
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <Nav />
         <div className={styles.inputAndFilterContainer}>
           <div className={styles.inputContainer}>
             <FaSearch className={styles.buttonIcon} />
@@ -47,7 +41,7 @@ export default function Home({ country_data }) {
         </div>
         <div className={styles.countriesContainer}>{renderCountries}</div>
       </div>
-    </ThemeContext.Provider>
+    </Layout>
   );
 }
 
