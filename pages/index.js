@@ -56,7 +56,6 @@ export async function getStaticProps(context) {
     console.log("something broke, ", err);
   }
 
-  console.log(country_data);
   return {
     props: { country_data },
   };
