@@ -4,7 +4,7 @@ import Link from "next/link";
 import { myLoader } from "../layouts/loader";
 
 export default function Country({ data }) {
-  const { flag, name, region, population, capital } = data;
+  const { flag, name, region, population, capital, alpha3Code } = data;
   return (
     <>
       <Link href={`/country/${name}`} passHref={true}>

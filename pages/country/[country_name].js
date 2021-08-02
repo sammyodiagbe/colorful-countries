@@ -21,7 +21,6 @@ export default function Country({ data }) {
     currencies,
     flag,
   } = data;
-  console.log("borders ", borders);
   return (
     <>
       <Head>
@@ -83,17 +82,13 @@ export default function Country({ data }) {
               </p>
               <div className={country.borderCountry}>
                 <h3>Border Countries</h3>
-                {borders.map((border, index) => {
-                  return (
-                    <Link
-                      href={`/country/${border.name}`}
-                      key={index}
-                      className={country.borderName}
-                    >
-                      {border}
-                    </Link>
-                  );
-                })}
+                {borders.length ? (
+                  borders.map((border, index) => {
+                    return <div key={index}>{border.name}</div>;
+                  })
+                ) : (
+                  <p>No Country around, probably an Island.</p>
+                )}
               </div>
             </div>
           </div>
@@ -126,12 +121,13 @@ export async function getStaticProps({ params }) {
   );
   data = res.data[0];
   const { borders } = data;
-  const fetchCountries = await axios.get(
-    `https://restcountries.eu/rest/v2/alpha?codes=${borders.join(
-      ";"
-    )}&fields=name`
-  );
-  data.borders = fetchCountries.data;
+  if (borders.length) {
+    const fetchCountries = await axios.get(
+      `https://restcountries.eu/rest/v2/alpha?codes=${borders.join(";")}`
+    );
+    data.borders = fetchCountries.data;
+  }
+
   return {
     props: {
       data,
