@@ -16,7 +16,7 @@ div.country div.flagContainer img {
 }
 
 div.country div.details {
-  padding: 1.8em 1em;
+  padding: 1.8em 1.5em;
 }
 
 div.country div.details h3 {
@@ -30,5 +30,75 @@ div.country div.details p {
 
 div.country div.details p span {
   font-weight: normal;
+}
+
+div.container {
+  padding: 1.8em 1.5em;
+}
+
+div.container div.goBack {
+  margin-bottom: 3em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+div.container div.goBack a {
+  display: inline-block;
+  padding: 2em;
+  -webkit-box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.1);
+}
+
+div.container div.goBack svg.linkicon {
+  margin-right: 0.5em;
+}
+
+div.container div.right {
+  margin-top: 2em;
+}
+
+div.container div.details {
+  padding: 3em 0;
+}
+
+div.container div.details h2 {
+  padding-bottom: 2em;
+}
+
+div.container div.details p.detail {
+  padding-bottom: 1em;
+  font-weight: bold;
+}
+
+div.container div.details p.detail span {
+  font-weight: normal;
+}
+
+div.container div.details h3.borderTitle {
+  padding-top: 3em;
+  padding-bottom: 1em;
+}
+
+div.container div.details div.borderContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+div.container div.details div.borderContainer div.border {
+  margin-right: 0.6em;
+}
+
+div.container div.details div.borderContainer div.border a {
+  padding: 1em;
+  display: inline-block;
+  -webkit-box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.1);
 }
 /*# sourceMappingURL=Country.module.css.map */

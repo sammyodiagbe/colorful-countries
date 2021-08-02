@@ -30,3 +30,58 @@ div.country {
     }
   }
 }
+
+div.container {
+  padding: $padding;
+
+  div.goBack {
+    margin-bottom: 3em;
+    display: flex;
+    align-items: center;
+    a {
+      display: inline-block;
+      padding: 2em;
+      box-shadow: $input-box-shadow;
+    }
+
+    svg.linkicon {
+      margin-right: 0.5em;
+    }
+  }
+  div.right {
+    margin-top: 2em;
+  }
+  div.details {
+    padding: 3em 0;
+
+    h2 {
+      padding-bottom: 2em;
+    }
+
+    p.detail {
+      padding-bottom: 1em;
+      font-weight: bold;
+      span {
+        font-weight: normal;
+      }
+    }
+
+    h3.borderTitle {
+      padding-top: 3em;
+      padding-bottom: 1em;
+    }
+
+    div.borderContainer {
+      display: flex;
+      flex-wrap: wrap;
+      div.border {
+        margin-right: 0.6em;
+        a {
+          padding: 1em;
+          display: inline-block;
+          box-shadow: $input-box-shadow;
+        }
+      }
+    }
+  }
+}

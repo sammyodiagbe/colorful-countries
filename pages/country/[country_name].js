@@ -1,11 +1,11 @@
 import country from "../../styles/Country.module.css";
-import { useRouter } from "next/router";
 import Layout from "../../layouts/Layout";
 import axios from "axios";
 import Image from "next/image";
 import Head from "next/head";
 import { myLoader } from "../../layouts/loader";
 import Link from "next/link";
+import { FaArrowLeft } from "react-icons/fa";
 
 export default function Country({ data }) {
   const {
@@ -28,6 +28,14 @@ export default function Country({ data }) {
       </Head>
       <Layout>
         <div className={country.container}>
+          <div className={country.goBack}>
+            <Link href="/" passHref>
+              <>
+                <FaArrowLeft className={country.linkicon} />
+                Go back
+              </>
+            </Link>
+          </div>
           <div className={country.flagContainer}>
             <Image
               loader={myLoader}
@@ -41,30 +49,28 @@ export default function Country({ data }) {
             <div className={country.left}>
               <h2>{name}</h2>
 
-              <p>
+              <p className={country.detail}>
                 Native Name: <span>{nativeName}</span>
               </p>
-              <p>
+              <p className={country.detail}>
                 Population <span>{population}</span>
               </p>
-              <p>
+              <p className={country.detail}>
                 Region: <span>{region}</span>
               </p>
-              <p>
+              <p className={country.detail}>
                 Sub Region: <span>{subregion}</span>
               </p>
-              <p>
+              <p className={country.detail}>
                 Capital: <span>{capital}</span>
               </p>
             </div>
             <div className={country.right}>
-              <p>
+              <p className={country.detail}>
                 Top Level Domain: <span>{topLevelDomain[0]}</span>
               </p>
-              <p>
-                Native Name: <span>{nativeName}</span>
-              </p>
-              <p>
+
+              <p className={country.detail}>
                 Currencies:{" "}
                 <span>
                   {currencies.map((currency, index) => (
@@ -72,7 +78,7 @@ export default function Country({ data }) {
                   ))}
                 </span>
               </p>
-              <p>
+              <p className={country.detail}>
                 Languages:{" "}
                 <span>
                   {languages.map((lang, index) => (
@@ -81,14 +87,22 @@ export default function Country({ data }) {
                 </span>
               </p>
               <div className={country.borderCountry}>
-                <h3>Border Countries</h3>
-                {borders.length ? (
-                  borders.map((border, index) => {
-                    return <div key={index}>{border.name}</div>;
-                  })
-                ) : (
-                  <p>No Country around, probably an Island.</p>
-                )}
+                <h3 className={country.borderTitle}>Border Countries</h3>
+                <div className={country.borderContainer}>
+                  {borders.length ? (
+                    borders.map((border, index) => {
+                      return (
+                        <div key={index} className={country.border}>
+                          <Link href={`/country/${border.name}`}>
+                            {border.name}
+                          </Link>
+                        </div>
+                      );
+                    })
+                  ) : (
+                    <p>No Country around, probably an Island.</p>
+                  )}
+                </div>
               </div>
             </div>
           </div>
@@ -117,7 +131,7 @@ export async function getStaticProps({ params }) {
   let data;
   // const { country } = params;
   const res = await axios.get(
-    `https://restcountries.eu/rest/v2/name/${params.country_name}`
+    `https://restcountries.eu/rest/v2/name/${params.country_name}?fullText=true`
   );
   data = res.data[0];
   const { borders } = data;
