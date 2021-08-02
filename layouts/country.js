@@ -15,20 +15,20 @@ export default function Country({ data }) {
           src={flag}
           alt={name}
           width={375}
-          height={300}
+          height={220}
         />
       </div>
       <div className={styles.details}>
-        <h2>{name}</h2>
-        <h3>
+        <h3>{name}</h3>
+        <p>
           Population: <span>{population}</span>
-        </h3>
-        <h3>
+        </p>
+        <p>
           Region: <span>{region}</span>
-        </h3>
-        <h3>
+        </p>
+        <p>
           Capital: <span>{capital}</span>
-        </h3>
+        </p>
       </div>
     </div>
   );

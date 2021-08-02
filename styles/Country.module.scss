@@ -5,15 +5,28 @@ div.country {
   box-shadow: $input-box-shadow;
   border-radius: 5px;
   overflow: hidden;
-  width: 80%;
+  width: 70%;
   div.flagContainer {
     img {
       max-width: 100%;
-      object-fit: fill;
+      object-fit: cover;
+      object-position: center;
     }
   }
 
   div.details {
     padding: $padding;
+
+    h3 {
+      padding-bottom: 1em;
+    }
+
+    p {
+      font-weight: bold;
+      padding-bottom: 0.7em;
+      span {
+        font-weight: normal;
+      }
+    }
   }
 }

@@ -4,16 +4,31 @@ div.country {
           box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   overflow: hidden;
-  width: 80%;
+  width: 70%;
 }
 
 div.country div.flagContainer img {
   max-width: 100%;
-  -o-object-fit: fill;
-     object-fit: fill;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 
 div.country div.details {
   padding: 1.8em 1em;
+}
+
+div.country div.details h3 {
+  padding-bottom: 1em;
+}
+
+div.country div.details p {
+  font-weight: bold;
+  padding-bottom: 0.7em;
+}
+
+div.country div.details p span {
+  font-weight: normal;
 }
 /*# sourceMappingURL=Country.module.css.map */
