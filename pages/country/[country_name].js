@@ -36,56 +36,62 @@ export default function Country({ data }) {
               </a>
             </Link>
           </div>
-          <div className={country.flagContainer}>
-            <Image
-              loader={myLoader}
-              src={flag}
-              alt={`${name}'s flag`}
-              width={500}
-              height={300}
-            />
-          </div>
-          <div className={country.details}>
-            <div className={country.left}>
-              <h2>{name}</h2>
-
-              <p className={country.detail}>
-                Native Name: <span>{nativeName}</span>
-              </p>
-              <p className={country.detail}>
-                Population <span>{population}</span>
-              </p>
-              <p className={country.detail}>
-                Region: <span>{region}</span>
-              </p>
-              <p className={country.detail}>
-                Sub Region: <span>{subregion}</span>
-              </p>
-              <p className={country.detail}>
-                Capital: <span>{capital}</span>
-              </p>
+          <div className={country.wrapper}>
+            <div className={country.flagContainer}>
+              <Image
+                loader={myLoader}
+                src={flag}
+                alt={`${name}'s flag`}
+                width={500}
+                height={300}
+              />
             </div>
-            <div className={country.right}>
-              <p className={country.detail}>
-                Top Level Domain: <span>{topLevelDomain[0]}</span>
-              </p>
+            <div className={country.detailsContainer}>
+              <h2>{name}</h2>
+              {/* details */}
 
-              <p className={country.detail}>
-                Currencies:{" "}
-                <span>
-                  {currencies.map((currency, index) => (
-                    <span key={index}>{currency.name},</span>
-                  ))}
-                </span>
-              </p>
-              <p className={country.detail}>
-                Languages:{" "}
-                <span>
-                  {languages.map((lang, index) => (
-                    <span key={index}>{lang.name}, </span>
-                  ))}
-                </span>
-              </p>
+              <div className={country.details}>
+                <div className={country.left}>
+                  <p className={country.detail}>
+                    Native Name: <span>{nativeName}</span>
+                  </p>
+                  <p className={country.detail}>
+                    Population <span>{population}</span>
+                  </p>
+                  <p className={country.detail}>
+                    Region: <span>{region}</span>
+                  </p>
+                  <p className={country.detail}>
+                    Sub Region: <span>{subregion}</span>
+                  </p>
+                  <p className={country.detail}>
+                    Capital: <span>{capital}</span>
+                  </p>
+                </div>
+                <div className={country.right}>
+                  <p className={country.detail}>
+                    Top Level Domain: <span>{topLevelDomain[0]}</span>
+                  </p>
+
+                  <p className={country.detail}>
+                    Currencies:{" "}
+                    <span>
+                      {currencies.map((currency, index) => (
+                        <span key={index}>{currency.name},</span>
+                      ))}
+                    </span>
+                  </p>
+                  <p className={country.detail}>
+                    Languages:{" "}
+                    <span>
+                      {languages.map((lang, index) => (
+                        <span key={index}>{lang.name}, </span>
+                      ))}
+                    </span>
+                  </p>
+                </div>
+              </div>
+              {/* details end */}
               <div className={country.borderCountry}>
                 <h3 className={country.borderTitle}>Border Countries</h3>
                 <div className={country.borderContainer}>

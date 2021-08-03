@@ -1,11 +1,21 @@
-div.container {
+main.container {
   background: #fafafa;
   color: #111517;
   min-height: 100vh;
 }
 
-div.container nav.navigation {
+main.container nav.navigation {
   background: white;
+  padding: 1.8em 1.5em;
+  -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 20000000000;
+}
+
+main.container nav.navigation div.container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -15,12 +25,9 @@ div.container nav.navigation {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 1.8em 1.5em;
-  -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
 }
 
-div.container nav.navigation button {
+main.container nav.navigation div.container button {
   background: transparent;
   vertical-align: center;
   display: -webkit-box;
@@ -31,11 +38,11 @@ div.container nav.navigation button {
           align-items: center;
 }
 
-div.container nav.navigation button .buttonIcon {
+main.container nav.navigation div.container button .buttonIcon {
   margin-right: 0.5em;
 }
 
-div.container div.inputAndFilterContainer {
+main.container div.inputAndFilterContainer {
   padding: 1.8em 1.5em;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -46,10 +53,10 @@ div.container div.inputAndFilterContainer {
           flex-direction: column;
 }
 
-div.container div.inputAndFilterContainer div.inputContainer {
+main.container div.inputAndFilterContainer div.inputContainer {
   -webkit-box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.1);
           box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.1);
-  background: #fafafa;
+  background: #ffff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -60,44 +67,42 @@ div.container div.inputAndFilterContainer div.inputContainer {
   padding: 0 2em;
 }
 
-div.container div.inputAndFilterContainer div.inputContainer .buttonIcon {
+main.container div.inputAndFilterContainer div.inputContainer .buttonIcon {
   margin-right: 0;
   fill: #858585;
 }
 
-div.container div.inputAndFilterContainer div.inputContainer form {
+main.container div.inputAndFilterContainer div.inputContainer form {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
 
-div.container div.inputAndFilterContainer div.inputContainer input {
+main.container div.inputAndFilterContainer div.inputContainer input {
   padding: 1.4em 2em;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  width: 100%;
   background: transparent;
 }
 
-div.container div.filter {
+main.container div.filter {
   width: 220px;
   -webkit-box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.1);
           box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.1);
   background: #fafafa;
 }
 
-div.container div.filter div.filterContainer {
+main.container div.filter div.filterContainer {
   position: relative;
   width: 100%;
 }
 
-div.container div.filter div.filterContainer div.valueContainer {
+main.container div.filter div.filterContainer div.valueContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-div.container div.filter div.filterContainer div.valueContainer .icon {
+main.container div.filter div.filterContainer div.valueContainer .icon {
   position: absolute;
   right: 10px;
   top: 50%;
@@ -105,35 +110,35 @@ div.container div.filter div.filterContainer div.valueContainer .icon {
           transform: translateY(-50%);
 }
 
-div.container div.filter div.filterContainer div.valueContainer form {
+main.container div.filter div.filterContainer div.valueContainer form {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
 
-div.container div.filter div.filterContainer div.valueContainer input.value {
+main.container div.filter div.filterContainer div.valueContainer input.value {
   padding: 1.4em 2em;
   width: 100%;
   cursor: pointer;
 }
 
-div.container div.filter div.filterContainer div.valueContainer input.value::-webkit-input-placeholder {
+main.container div.filter div.filterContainer div.valueContainer input.value::-webkit-input-placeholder {
   color: #111517;
 }
 
-div.container div.filter div.filterContainer div.valueContainer input.value:-ms-input-placeholder {
+main.container div.filter div.filterContainer div.valueContainer input.value:-ms-input-placeholder {
   color: #111517;
 }
 
-div.container div.filter div.filterContainer div.valueContainer input.value::-ms-input-placeholder {
+main.container div.filter div.filterContainer div.valueContainer input.value::-ms-input-placeholder {
   color: #111517;
 }
 
-div.container div.filter div.filterContainer div.valueContainer input.value::placeholder {
+main.container div.filter div.filterContainer div.valueContainer input.value::placeholder {
   color: #111517;
 }
 
-div.container div.filter div.filterContainer div.options {
+main.container div.filter div.filterContainer div.options {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr;
@@ -146,13 +151,13 @@ div.container div.filter div.filterContainer div.options {
   background-color: #fff;
 }
 
-div.container div.filter div.filterContainer div.options button {
+main.container div.filter div.filterContainer div.options button {
   width: 100%;
   padding: 0.7em;
   background: none;
 }
 
-div.container div.countriesContainer {
+main.container div.countriesContainer {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr;
@@ -163,5 +168,38 @@ div.container div.countriesContainer {
           align-items: center;
   padding-top: 3em;
   padding: 1.8em 1.5em;
+}
+
+@media screen and (min-width: 1000px) {
+  div.container {
+    width: 1000px;
+    margin: 0 auto;
+  }
+  div.container div.countriesContainer {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    row-gap: 1.4em;
+    -webkit-column-gap: 1.4em;
+            column-gap: 1.4em;
+  }
+  div.container div.inputAndFilterContainer {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  div.container div.inputAndFilterContainer div.inputContainer {
+    width: 500px;
+  }
+  div.container div.inputAndFilterContainer div.inputContainer,
+  div.container div.inputAndFilterContainer div.filter {
+    margin: 0;
+  }
 }
 /*# sourceMappingURL=Home.module.css.map */

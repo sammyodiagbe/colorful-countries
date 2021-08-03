@@ -11,10 +11,10 @@ export default function Layout({ children }) {
   };
   return (
     <ThemeContext.Provider value={{ toggleTheme }}>
-      <div className={styles.container}>
+      <main className={styles.container}>
         <Nav />
         {children}
-      </div>
+      </main>
     </ThemeContext.Provider>
   );
 }

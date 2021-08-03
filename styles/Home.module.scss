@@ -1,28 +1,35 @@
 @import "base.scss";
 
-div.container {
+main.container {
   background: $light-mode-background;
   color: $light-mode-text;
   min-height: 100vh;
+
   nav.navigation {
     background: $dark-mode-text-and-light-mode-elements;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 
     padding: $padding;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 20000000000;
     // button
-    button {
-      background: transparent;
-      vertical-align: center;
+
+    div.container {
       display: flex;
       align-items: center;
-      .buttonIcon {
-        margin-right: 0.5em;
-        // fill: none;
-        // stroke-width: 1px;
-        // stroke:
+      justify-content: space-between;
+      button {
+        background: transparent;
+        vertical-align: center;
+        display: flex;
+        align-items: center;
+        .buttonIcon {
+          margin-right: 0.5em;
+          // fill: none;
+          // stroke-width: 1px;
+          // stroke:
+        }
       }
     }
   }
@@ -33,7 +40,7 @@ div.container {
     flex-direction: column;
     div.inputContainer {
       box-shadow: $input-box-shadow;
-      background: $light-mode-background;
+      background: #ffff;
       display: flex;
       align-items: center;
       margin-bottom: $margin-bottom;
@@ -47,7 +54,7 @@ div.container {
       }
       input {
         padding: $input-padding;
-        flex: 1;
+        width: 100%;
         background: transparent;
       }
     }
@@ -110,5 +117,30 @@ div.container {
     align-items: center;
     padding-top: 3em;
     padding: $padding;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  div.container {
+    width: 1000px;
+    margin: 0 auto;
+    div.countriesContainer {
+      grid-template-columns: repeat(3, 1fr);
+      row-gap: 1.4em;
+      column-gap: 1.4em;
+    }
+
+    div.inputAndFilterContainer {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      div.inputContainer {
+        width: 500px;
+      }
+      div.inputContainer,
+      div.filter {
+        margin: 0;
+      }
+    }
   }
 }
