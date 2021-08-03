@@ -232,7 +232,7 @@ main.dark {
   div.inputAndFilterContainer {
     div.inputContainer,
     div.filterContainer {
-      background: $dark-mode-backgrounds;
+      background: $dark-mode-elements;
       input {
         color: #fff;
       }
@@ -256,7 +256,7 @@ main.dark {
       }
 
       div.options {
-        background: $dark-mode-backgrounds;
+        background: $dark-mode-elements;
         color: #fff;
         button {
           color: $dark-mode-text-and-light-mode-elements;

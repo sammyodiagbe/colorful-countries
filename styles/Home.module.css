@@ -306,7 +306,7 @@ main.dark nav.navigation div.container button .buttonIcon {
 
 main.dark div.inputAndFilterContainer div.inputContainer,
 main.dark div.inputAndFilterContainer div.filterContainer {
-  background: #202c37;
+  background: #2b3945;
 }
 
 main.dark div.inputAndFilterContainer div.inputContainer input,
@@ -345,7 +345,7 @@ main.dark div.filter div.filterContainer div.valueContainer input.value::placeho
 }
 
 main.dark div.filter div.filterContainer div.options {
-  background: #202c37;
+  background: #2b3945;
   color: #fff;
 }
 
