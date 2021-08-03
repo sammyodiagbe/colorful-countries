@@ -91,7 +91,9 @@ export default function Home({ country_data }) {
                     className={styles.option}
                     onClick={filterCountries}
                     data-filter="All"
-                  ></button>
+                  >
+                    All
+                  </button>
                   <button
                     className={styles.option}
                     onClick={filterCountries}
