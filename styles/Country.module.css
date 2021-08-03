@@ -3,7 +3,6 @@ div.country {
           box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   overflow: hidden;
-  width: 70%;
   margin: 0 auto;
   margin-bottom: 4em;
 }
@@ -49,9 +48,10 @@ div.container div.goBack {
 
 div.container div.goBack a {
   display: inline-block;
-  padding: 1.8em 1.5em;
+  padding: 1em;
   -webkit-box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.1);
           box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
 }
 
 div.container div.goBack svg.linkicon {

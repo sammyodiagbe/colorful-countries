@@ -4,7 +4,6 @@ div.country {
   box-shadow: $input-box-shadow;
   border-radius: 5px;
   overflow: hidden;
-  width: 70%;
   margin: 0 auto;
   margin-bottom: 4em;
   div.flagContainer {
@@ -41,8 +40,9 @@ div.container {
     align-items: center;
     a {
       display: inline-block;
-      padding: $padding;
+      padding: 1em;
       box-shadow: $input-box-shadow;
+      border-radius: $border-radius;
     }
 
     svg.linkicon {
