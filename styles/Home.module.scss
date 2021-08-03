@@ -14,7 +14,7 @@ main.container {
     top: 0;
     z-index: 20000000000;
     // button
-
+    transition: all 1s;
     div.container {
       display: flex;
       align-items: center;

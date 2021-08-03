@@ -13,6 +13,8 @@ main.container nav.navigation {
   position: sticky;
   top: 0;
   z-index: 20000000000;
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 
 main.container nav.navigation div.container {
