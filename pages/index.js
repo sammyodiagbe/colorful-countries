@@ -17,7 +17,7 @@ export default function Home({ country_data }) {
   }, []);
 
   const renderCountries = countries.map((country, index) => {
-    return <Country key={index} data={country} />;
+    return <Country key={index} data={{ ...country }} />;
   });
 
   const inputRef = useRef(null);

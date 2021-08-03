@@ -6,8 +6,10 @@ import Head from "next/head";
 import { myLoader } from "../../layouts/loader";
 import Link from "next/link";
 import { FaArrowLeft } from "react-icons/fa";
+import { useRouter } from "next/router";
 
 export default function Country({ data }) {
+  const router = useRouter();
   const {
     name,
     region,
@@ -21,6 +23,10 @@ export default function Country({ data }) {
     currencies,
     flag,
   } = data;
+
+  if (router.isFallback) {
+    return <div>Loading....</div>;
+  }
   return (
     <>
       <Head>
@@ -119,7 +125,7 @@ export default function Country({ data }) {
 }
 
 export async function getStaticPaths() {
-  const res = await axios.get("https://restcountries.eu/rest/v2/region/europe");
+  const res = await axios.get("https://restcountries.eu/rest/v2/all");
   const data = res.data;
 
   const paths = data.map((country) => ({
@@ -127,12 +133,12 @@ export async function getStaticPaths() {
   }));
   return {
     paths,
-    fallback: true,
+    fallback: false,
   };
 }
 
 export async function getStaticProps({ params }) {
-  let data;
+  let data = {};
   const { country_name } = params;
   const res = await axios.get(
     `https://restcountries.eu/rest/v2/name/${encodeURIComponent(country_name)}`
