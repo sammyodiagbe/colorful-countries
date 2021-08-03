@@ -42,9 +42,13 @@ div.container {
         margin-right: 0;
         fill: $light-mode-input;
       }
+      form {
+        flex: 1;
+      }
       input {
         padding: $input-padding;
         flex: 1;
+        background: transparent;
       }
     }
   }
@@ -65,9 +69,13 @@ div.container {
           top: 50%;
           transform: translateY(-50%);
         }
+        form {
+          flex: 1;
+        }
         input.value {
           padding: $input-padding;
-          flex: 1;
+          width: 100%;
+          cursor: pointer;
           &:focus {
             // border: 1px solid dodgerblue;
           }

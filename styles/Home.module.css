@@ -65,11 +65,18 @@ div.container div.inputAndFilterContainer div.inputContainer .buttonIcon {
   fill: #858585;
 }
 
+div.container div.inputAndFilterContainer div.inputContainer form {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
 div.container div.inputAndFilterContainer div.inputContainer input {
   padding: 1.4em 2em;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  background: transparent;
 }
 
 div.container div.filter {
@@ -98,11 +105,16 @@ div.container div.filter div.filterContainer div.valueContainer .icon {
           transform: translateY(-50%);
 }
 
-div.container div.filter div.filterContainer div.valueContainer input.value {
-  padding: 1.4em 2em;
+div.container div.filter div.filterContainer div.valueContainer form {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+}
+
+div.container div.filter div.filterContainer div.valueContainer input.value {
+  padding: 1.4em 2em;
+  width: 100%;
+  cursor: pointer;
 }
 
 div.container div.filter div.filterContainer div.valueContainer input.value::-webkit-input-placeholder {

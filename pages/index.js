@@ -11,6 +11,7 @@ export default function Home({ country_data }) {
   const [filterValue, setFilterValue] = useState("");
   const [showMenu, setShowMenu] = useState(false);
   const [countries, setCountries] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
   useEffect(() => {
     setCountries(country_data);
   }, []);
@@ -31,6 +32,21 @@ export default function Home({ country_data }) {
     setShowMenu(false);
   };
 
+  const findCountry = async (event) => {
+    event.preventDefault();
+
+    if (searchQuery.trim() === "") return;
+    try {
+      const response = await axios.get(
+        `https://restcountries.eu/rest/v2/name/${encodeURIComponent(
+          searchQuery
+        )}`
+      );
+      const data = response.data;
+      setCountries(data);
+    } catch (err) {}
+  };
+
   return (
     <Layout>
       <div className={styles.container}>
@@ -43,7 +59,14 @@ export default function Home({ country_data }) {
         <div className={styles.inputAndFilterContainer}>
           <div className={styles.inputContainer}>
             <FaSearch className={styles.buttonIcon} />
-            <input type="text" placeholder="Search for a country" />
+            <form onSubmit={findCountry}>
+              <input
+                type="text"
+                placeholder="Search for a country"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+            </form>
           </div>
 
           {/* build custom select */}
