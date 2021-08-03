@@ -1,7 +1,7 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import { FaSearch } from "react-icons/fa";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import axios from "axios";
 import Country from "../layouts/country";
 import Layout from "../layouts/Layout";
@@ -10,14 +10,23 @@ import { FaChevronDown } from "react-icons/fa";
 export default function Home({ country_data }) {
   const [filterValue, setFilterValue] = useState("");
   const [showMenu, setShowMenu] = useState(false);
-  const renderCountries = country_data.map((country, index) => {
+  const [countries, setCountries] = useState([]);
+  useEffect(() => {
+    setCountries(country_data);
+  }, []);
+
+  const renderCountries = countries.map((country, index) => {
     return <Country key={index} data={country} />;
   });
 
   const inputRef = useRef(null);
-  const filterCountries = (e) => {
+  const filterCountries = async (e) => {
     e.preventDefault();
     const { filter } = e.target.dataset;
+    const response = await axios.get(
+      `https://restcountries.eu/rest/v2/region/${filter}`
+    );
+    setCountries(response.data);
     inputRef.current.setAttribute("placeholder", filter);
     setShowMenu(false);
   };
@@ -70,9 +79,9 @@ export default function Home({ country_data }) {
                   <button
                     className={styles.option}
                     onClick={filterCountries}
-                    data-filter="America"
+                    data-filter="Americas"
                   >
-                    America
+                    Americas
                   </button>
                   <button
                     className={styles.option}
@@ -102,7 +111,7 @@ export default function Home({ country_data }) {
 export async function getServerSideProps(context) {
   let country_data;
   try {
-    let res = await axios.get("https://restcountries.eu/rest/v2/all");
+    let res = await axios.get("https://restcountries.eu/rest/v2/region/europe");
     country_data = res.data;
   } catch (err) {
     console.log("something broke, ", err);

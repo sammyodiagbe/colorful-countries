@@ -113,7 +113,7 @@ export default function Country({ data }) {
 }
 
 export async function getStaticPaths() {
-  const res = await axios.get("https://restcountries.eu/rest/v2/all");
+  const res = await axios.get("https://restcountries.eu/rest/v2/region/europe");
   const data = res.data;
 
   const paths = data.map((country) => ({
