@@ -62,8 +62,7 @@ main.container {
   div.filter {
     width: 220px;
     box-shadow: $input-box-shadow;
-    background: $light-mode-background;
-
+    background: #fff;
     div.filterContainer {
       position: relative;
       width: 100%;
@@ -75,6 +74,7 @@ main.container {
           right: 10px;
           top: 50%;
           transform: translateY(-50%);
+          fill: $dark-mode-backgrounds;
         }
         form {
           flex: 1;
@@ -82,6 +82,7 @@ main.container {
         input.value {
           padding: $input-padding;
           width: 100%;
+          background: transparent;
           cursor: pointer;
           &:focus {
             // border: 1px solid dodgerblue;
@@ -110,6 +111,9 @@ main.container {
     }
   }
 
+  div.flagContainer2 {
+    padding: 0 1.5em;
+  }
   div.countriesContainer {
     display: grid;
     grid-template-columns: 1fr;
@@ -117,6 +121,166 @@ main.container {
     align-items: center;
     padding-top: 3em;
     padding: $padding;
+    div.country {
+      box-shadow: $input-box-shadow;
+      border-radius: 5px;
+      overflow: hidden;
+      margin: 0 auto;
+      margin-bottom: 4em;
+      background: inherit;
+      div.flagContainer {
+        img {
+          max-width: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+
+      div.details {
+        padding: $padding;
+        h3 {
+          padding-bottom: 1em;
+        }
+
+        p {
+          font-weight: bold;
+          padding-bottom: 0.7em;
+          span {
+            font-weight: normal;
+          }
+        }
+      }
+    }
+  }
+
+  div.goBack {
+    margin-bottom: 3em;
+    display: flex;
+    align-items: center;
+    padding: 3em 1.5em;
+    a {
+      display: inline-block;
+      padding: 1em;
+      box-shadow: $input-box-shadow;
+      border-radius: $border-radius;
+
+      background: #fff;
+    }
+
+    svg.linkicon {
+      margin-right: 0.5em;
+    }
+  }
+  div.detailsContainer {
+    padding: 0 1.5em;
+    div.right {
+      margin-top: 2em;
+    }
+    div.details {
+      padding: 3em 0;
+
+      h2 {
+        padding-bottom: 2em;
+      }
+
+      p.detail {
+        padding-bottom: 1em;
+        font-weight: bold;
+        span {
+          font-weight: normal;
+        }
+      }
+    }
+    h3.borderTitle {
+      padding-top: 3em;
+      padding-bottom: 1em;
+    }
+
+    div.borderContainer {
+      display: flex;
+      flex-wrap: wrap;
+      div.border {
+        margin-right: 0.6em;
+        a {
+          padding: 0.8em;
+          display: inline-block;
+          border-radius: $border-radius;
+          background: #fff;
+          box-shadow: $input-box-shadow;
+        }
+      }
+    }
+  }
+}
+
+main.dark {
+  background: $dark-mode-backgrounds;
+  color: $dark-mode-text-and-light-mode-elements;
+  nav.navigation {
+    background: $dark-mode-backgrounds;
+    border-bottom: 1px solid $dark-mode-elements;
+    div.container {
+      button {
+        color: $dark-mode-text-and-light-mode-elements;
+        .buttonIcon {
+          fill: $dark-mode-text-and-light-mode-elements;
+        }
+      }
+    }
+  }
+
+  div.inputAndFilterContainer {
+    div.inputContainer,
+    div.filterContainer {
+      background: $dark-mode-backgrounds;
+      input {
+        color: #fff;
+      }
+    }
+  }
+
+  div.filter {
+    div.filterContainer {
+      div.valueContainer {
+        display: flex;
+
+        .icon {
+          fill: $dark-mode-text-and-light-mode-elements;
+        }
+        input.value {
+          color: #fff;
+          &::placeholder {
+            color: $dark-mode-text-and-light-mode-elements;
+          }
+        }
+      }
+
+      div.options {
+        background: $dark-mode-backgrounds;
+        color: #fff;
+        button {
+          color: $dark-mode-text-and-light-mode-elements;
+        }
+      }
+    }
+  }
+
+  div.goBack {
+    a {
+      background: $dark-mode-elements;
+    }
+  }
+
+  div.detailsContainer {
+    div.borderContainer {
+      div.border {
+        margin-bottom: 1em;
+        a {
+          background: $dark-mode-elements;
+          box-shadow: $input-box-shadow;
+        }
+      }
+    }
   }
 }
 
@@ -140,6 +304,34 @@ main.container {
       div.inputContainer,
       div.filter {
         margin: 0;
+      }
+    }
+
+    div.wrapper {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 1.5em;
+      div.flagContainer2 {
+        padding: 0;
+      }
+      div.detailsContainer {
+        div.details {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          padding-bottom: 1em;
+          div.left,
+          div.right {
+            padding-top: 0;
+            padding-bottom: 0;
+            margin-top: 0;
+            margin-bottom: 0;
+          }
+        }
+
+        h3.borderTitle {
+          padding-top: 1em;
+          padding-bottom: 1em;
+        }
       }
     }
   }

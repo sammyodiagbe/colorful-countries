@@ -88,7 +88,7 @@ main.container div.filter {
   width: 220px;
   -webkit-box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.1);
           box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.1);
-  background: #fafafa;
+  background: #fff;
 }
 
 main.container div.filter div.filterContainer {
@@ -108,6 +108,7 @@ main.container div.filter div.filterContainer div.valueContainer .icon {
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+  fill: #202c37;
 }
 
 main.container div.filter div.filterContainer div.valueContainer form {
@@ -119,6 +120,7 @@ main.container div.filter div.filterContainer div.valueContainer form {
 main.container div.filter div.filterContainer div.valueContainer input.value {
   padding: 1.4em 2em;
   width: 100%;
+  background: transparent;
   cursor: pointer;
 }
 
@@ -157,6 +159,10 @@ main.container div.filter div.filterContainer div.options button {
   background: none;
 }
 
+main.container div.flagContainer2 {
+  padding: 0 1.5em;
+}
+
 main.container div.countriesContainer {
   display: -ms-grid;
   display: grid;
@@ -168,6 +174,197 @@ main.container div.countriesContainer {
           align-items: center;
   padding-top: 3em;
   padding: 1.8em 1.5em;
+}
+
+main.container div.countriesContainer div.country {
+  -webkit-box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 0 auto;
+  margin-bottom: 4em;
+  background: inherit;
+}
+
+main.container div.countriesContainer div.country div.flagContainer img {
+  max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+main.container div.countriesContainer div.country div.details {
+  padding: 1.8em 1.5em;
+}
+
+main.container div.countriesContainer div.country div.details h3 {
+  padding-bottom: 1em;
+}
+
+main.container div.countriesContainer div.country div.details p {
+  font-weight: bold;
+  padding-bottom: 0.7em;
+}
+
+main.container div.countriesContainer div.country div.details p span {
+  font-weight: normal;
+}
+
+main.container div.goBack {
+  margin-bottom: 3em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 3em 1.5em;
+}
+
+main.container div.goBack a {
+  display: inline-block;
+  padding: 1em;
+  -webkit-box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  background: #fff;
+}
+
+main.container div.goBack svg.linkicon {
+  margin-right: 0.5em;
+}
+
+main.container div.detailsContainer {
+  padding: 0 1.5em;
+}
+
+main.container div.detailsContainer div.right {
+  margin-top: 2em;
+}
+
+main.container div.detailsContainer div.details {
+  padding: 3em 0;
+}
+
+main.container div.detailsContainer div.details h2 {
+  padding-bottom: 2em;
+}
+
+main.container div.detailsContainer div.details p.detail {
+  padding-bottom: 1em;
+  font-weight: bold;
+}
+
+main.container div.detailsContainer div.details p.detail span {
+  font-weight: normal;
+}
+
+main.container div.detailsContainer h3.borderTitle {
+  padding-top: 3em;
+  padding-bottom: 1em;
+}
+
+main.container div.detailsContainer div.borderContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main.container div.detailsContainer div.borderContainer div.border {
+  margin-right: 0.6em;
+}
+
+main.container div.detailsContainer div.borderContainer div.border a {
+  padding: 0.8em;
+  display: inline-block;
+  border-radius: 5px;
+  background: #fff;
+  -webkit-box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.1);
+}
+
+main.dark {
+  background: #202c37;
+  color: white;
+}
+
+main.dark nav.navigation {
+  background: #202c37;
+  border-bottom: 1px solid #2b3945;
+}
+
+main.dark nav.navigation div.container button {
+  color: white;
+}
+
+main.dark nav.navigation div.container button .buttonIcon {
+  fill: white;
+}
+
+main.dark div.inputAndFilterContainer div.inputContainer,
+main.dark div.inputAndFilterContainer div.filterContainer {
+  background: #202c37;
+}
+
+main.dark div.inputAndFilterContainer div.inputContainer input,
+main.dark div.inputAndFilterContainer div.filterContainer input {
+  color: #fff;
+}
+
+main.dark div.filter div.filterContainer div.valueContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main.dark div.filter div.filterContainer div.valueContainer .icon {
+  fill: white;
+}
+
+main.dark div.filter div.filterContainer div.valueContainer input.value {
+  color: #fff;
+}
+
+main.dark div.filter div.filterContainer div.valueContainer input.value::-webkit-input-placeholder {
+  color: white;
+}
+
+main.dark div.filter div.filterContainer div.valueContainer input.value:-ms-input-placeholder {
+  color: white;
+}
+
+main.dark div.filter div.filterContainer div.valueContainer input.value::-ms-input-placeholder {
+  color: white;
+}
+
+main.dark div.filter div.filterContainer div.valueContainer input.value::placeholder {
+  color: white;
+}
+
+main.dark div.filter div.filterContainer div.options {
+  background: #202c37;
+  color: #fff;
+}
+
+main.dark div.filter div.filterContainer div.options button {
+  color: white;
+}
+
+main.dark div.goBack a {
+  background: #2b3945;
+}
+
+main.dark div.detailsContainer div.borderContainer div.border {
+  margin-bottom: 1em;
+}
+
+main.dark div.detailsContainer div.borderContainer div.border a {
+  background: #2b3945;
+  -webkit-box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.1);
 }
 
 @media screen and (min-width: 1000px) {
@@ -200,6 +397,35 @@ main.container div.countriesContainer {
   div.container div.inputAndFilterContainer div.inputContainer,
   div.container div.inputAndFilterContainer div.filter {
     margin: 0;
+  }
+  div.container div.wrapper {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    -webkit-column-gap: 1.5em;
+            column-gap: 1.5em;
+  }
+  div.container div.wrapper div.flagContainer2 {
+    padding: 0;
+  }
+  div.container div.wrapper div.detailsContainer div.details {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    padding-bottom: 1em;
+  }
+  div.container div.wrapper div.detailsContainer div.details div.left,
+  div.container div.wrapper div.detailsContainer div.details div.right {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  div.container div.wrapper div.detailsContainer h3.borderTitle {
+    padding-top: 1em;
+    padding-bottom: 1em;
   }
 }
 /*# sourceMappingURL=Home.module.css.map */

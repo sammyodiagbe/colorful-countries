@@ -10,8 +10,10 @@ export default function Layout({ children }) {
     setTheme(newTheme);
   };
   return (
-    <ThemeContext.Provider value={{ toggleTheme }}>
-      <main className={styles.container}>
+    <ThemeContext.Provider value={{ toggleTheme, theme }}>
+      <main
+        className={`${styles.container} ${theme === "dark" && styles.dark}`}
+      >
         <Nav />
         {children}
       </main>

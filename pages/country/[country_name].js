@@ -1,4 +1,4 @@
-import country from "../../styles/Country.module.css";
+import country from "../../styles/Home.module.css";
 import Layout from "../../layouts/Layout";
 import axios from "axios";
 import Image from "next/image";
@@ -37,7 +37,7 @@ export default function Country({ data }) {
             </Link>
           </div>
           <div className={country.wrapper}>
-            <div className={country.flagContainer}>
+            <div className={country.flagContainer2}>
               <Image
                 loader={myLoader}
                 src={flag}
