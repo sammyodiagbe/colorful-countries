@@ -25,7 +25,9 @@ export default function Home({ country_data }) {
     e.preventDefault();
     const { filter } = e.target.dataset;
     const response = await axios.get(
-      `https://restcountries.eu/rest/v2/region/${filter}`
+      filter === "All"
+        ? `https://restcountries.eu/rest/v2/all`
+        : `https://restcountries.eu/rest/v2/region/${filter}`
     );
     setCountries(response.data);
     inputRef.current.setAttribute("placeholder", filter);
@@ -85,6 +87,11 @@ export default function Home({ country_data }) {
               </div>
               {showMenu && (
                 <div className={styles.options}>
+                  <button
+                    className={styles.option}
+                    onClick={filterCountries}
+                    data-filter="All"
+                  ></button>
                   <button
                     className={styles.option}
                     onClick={filterCountries}
