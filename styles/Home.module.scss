@@ -49,16 +49,48 @@ div.container {
     }
   }
   div.filter {
-    width: 50%;
+    width: 220px;
     box-shadow: $input-box-shadow;
     background: $light-mode-background;
-    select {
-      padding: 1.2em 0;
-      background: transparent;
-      display: block;
+
+    div.filterContainer {
+      position: relative;
       width: 100%;
-      option {
-        padding: $input-padding;
+      div.valueContainer {
+        display: flex;
+
+        .icon {
+          position: absolute;
+          right: 10px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+        input.value {
+          padding: $input-padding;
+          flex: 1;
+          &:focus {
+            // border: 1px solid dodgerblue;
+          }
+          &::placeholder {
+            color: $light-mode-text;
+          }
+        }
+      }
+
+      div.options {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+        position: absolute;
+        top: calc(100% + 5px);
+        left: 0;
+        z-index: 2000000;
+        background-color: #fff;
+        button {
+          width: 100%;
+          padding: 0.7em;
+          background: none;
+        }
       }
     }
   }

@@ -1,17 +1,27 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import { FaSearch } from "react-icons/fa";
-import Nav from "../layouts/nav";
-import { ThemeContext } from "../context/context";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import axios from "axios";
 import Country from "../layouts/country";
 import Layout from "../layouts/Layout";
+import { FaChevronDown } from "react-icons/fa";
 
 export default function Home({ country_data }) {
+  const [filterValue, setFilterValue] = useState("");
+  const [showMenu, setShowMenu] = useState(false);
   const renderCountries = country_data.map((country, index) => {
     return <Country key={index} data={country} />;
   });
+
+  const inputRef = useRef(null);
+  const filterCountries = (e) => {
+    e.preventDefault();
+    const { filter } = e.target.dataset;
+    inputRef.current.setAttribute("placeholder", filter);
+    setShowMenu(false);
+  };
+
   return (
     <Layout>
       <div className={styles.container}>
@@ -29,14 +39,58 @@ export default function Home({ country_data }) {
 
           {/* build custom select */}
           <div className={styles.filter}>
-            <select defaultValue={"Filter by Region"}>
-              <option disabled>Filter by Region</option>
-              <option>Africa</option>
-              <option>America</option>
-              <option>Asia</option>
-              <option>Europe</option>
-              <option>Oceania</option>
-            </select>
+            <div className={styles.filterContainer}>
+              <div className={styles.valueContainer}>
+                <input
+                  type="text"
+                  placeholder="Filter by Region"
+                  className={styles.value}
+                  readOnly
+                  onFocus={() => setShowMenu(true)}
+                  ref={inputRef}
+                />
+                <FaChevronDown className={styles.icon} />
+              </div>
+              {showMenu && (
+                <div className={styles.options}>
+                  <button
+                    className={styles.option}
+                    onClick={filterCountries}
+                    data-filter="Europe"
+                  >
+                    Europe
+                  </button>
+                  <button
+                    className={styles.option}
+                    onClick={filterCountries}
+                    data-filter="Africa"
+                  >
+                    Africa
+                  </button>
+                  <button
+                    className={styles.option}
+                    onClick={filterCountries}
+                    data-filter="America"
+                  >
+                    America
+                  </button>
+                  <button
+                    className={styles.option}
+                    onClick={filterCountries}
+                    data-filter="Asia"
+                  >
+                    Asia
+                  </button>
+                  <button
+                    className={styles.option}
+                    onClick={filterCountries}
+                    data-filter="Oceania"
+                  >
+                    Oceania
+                  </button>
+                </div>
+              )}
+            </div>
           </div>
         </div>
         <div className={styles.countriesContainer}>{renderCountries}</div>
