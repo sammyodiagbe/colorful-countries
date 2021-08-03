@@ -1,11 +1,12 @@
 @import "base.scss";
 
 div.country {
-  margin-bottom: 4em;
   box-shadow: $input-box-shadow;
   border-radius: 5px;
   overflow: hidden;
   width: 70%;
+  margin: 0 auto;
+  margin-bottom: 4em;
   div.flagContainer {
     img {
       max-width: 100%;
@@ -40,7 +41,7 @@ div.container {
     align-items: center;
     a {
       display: inline-block;
-      padding: 2em;
+      padding: $padding;
       box-shadow: $input-box-shadow;
     }
 

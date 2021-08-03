@@ -29,11 +29,11 @@ export default function Country({ data }) {
       <Layout>
         <div className={country.container}>
           <div className={country.goBack}>
-            <Link href="/" passHref>
-              <>
+            <Link href="/">
+              <a>
                 <FaArrowLeft className={country.linkicon} />
                 Go back
-              </>
+              </a>
             </Link>
           </div>
           <div className={country.flagContainer}>
@@ -113,9 +113,7 @@ export default function Country({ data }) {
 }
 
 export async function getStaticPaths() {
-  const res = await axios.get(
-    "https://restcountries.eu/rest/v2/all?fields=name;region;capital;flag;population"
-  );
+  const res = await axios.get("https://restcountries.eu/rest/v2/all");
   const data = res.data;
 
   const paths = data.map((country) => ({
@@ -123,23 +121,25 @@ export async function getStaticPaths() {
   }));
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 }
 
 export async function getStaticProps({ params }) {
   let data;
-  // const { country } = params;
+  const { country_name } = params;
   const res = await axios.get(
-    `https://restcountries.eu/rest/v2/name/${params.country_name}?fullText=true`
+    `https://restcountries.eu/rest/v2/name/${encodeURIComponent(country_name)}`
   );
   data = res.data[0];
   const { borders } = data;
-  if (borders.length) {
+  if (borders.length > 0) {
     const fetchCountries = await axios.get(
       `https://restcountries.eu/rest/v2/alpha?codes=${borders.join(";")}`
     );
     data.borders = fetchCountries.data;
+  } else {
+    data.borders = [];
   }
 
   return {

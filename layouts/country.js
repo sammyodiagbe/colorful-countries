@@ -7,30 +7,32 @@ export default function Country({ data }) {
   const { flag, name, region, population, capital, alpha3Code } = data;
   return (
     <>
-      <Link href={`/country/${name}`} passHref={true}>
-        <div className={styles.country}>
-          <div className={styles.flagContainer}>
-            <Image
-              loader={myLoader}
-              src={flag}
-              alt={name}
-              width={375}
-              height={220}
-            />
+      <Link href={`/country/${encodeURIComponent(name)}`}>
+        <a>
+          <div className={styles.country}>
+            <div className={styles.flagContainer}>
+              <Image
+                loader={myLoader}
+                src={flag}
+                alt={name}
+                width={375}
+                height={220}
+              />
+            </div>
+            <div className={styles.details}>
+              <h3>{name}</h3>
+              <p>
+                Population: <span>{population}</span>
+              </p>
+              <p>
+                Region: <span>{region}</span>
+              </p>
+              <p>
+                Capital: <span>{capital}</span>
+              </p>
+            </div>
           </div>
-          <div className={styles.details}>
-            <h3>{name}</h3>
-            <p>
-              Population: <span>{population}</span>
-            </p>
-            <p>
-              Region: <span>{region}</span>
-            </p>
-            <p>
-              Capital: <span>{capital}</span>
-            </p>
-          </div>
-        </div>
+        </a>
       </Link>
     </>
   );

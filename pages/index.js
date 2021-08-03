@@ -45,12 +45,10 @@ export default function Home({ country_data }) {
   );
 }
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   let country_data;
   try {
-    let res = await axios.get(
-      "https://restcountries.eu/rest/v2/all?fields=name;region;capital;flag;population"
-    );
+    let res = await axios.get("https://restcountries.eu/rest/v2/all");
     country_data = res.data;
   } catch (err) {
     console.log("something broke, ", err);

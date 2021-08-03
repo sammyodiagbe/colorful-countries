@@ -1,10 +1,11 @@
 div.country {
-  margin-bottom: 4em;
   -webkit-box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.1);
           box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   overflow: hidden;
   width: 70%;
+  margin: 0 auto;
+  margin-bottom: 4em;
 }
 
 div.country div.flagContainer img {
@@ -48,7 +49,7 @@ div.container div.goBack {
 
 div.container div.goBack a {
   display: inline-block;
-  padding: 2em;
+  padding: 1.8em 1.5em;
   -webkit-box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.1);
           box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.1);
 }
