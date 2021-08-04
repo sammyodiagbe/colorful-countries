@@ -376,8 +376,8 @@ main.dark div.detailsContainer div.borderContainer div.border a {
     margin: 0 auto;
   }
   div.container div.countriesContainer {
-    -ms-grid-columns: (1fr)[3];
-        grid-template-columns: repeat(3, 1fr);
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
     row-gap: 1.4em;
     -webkit-column-gap: 1.4em;
             column-gap: 1.4em;
