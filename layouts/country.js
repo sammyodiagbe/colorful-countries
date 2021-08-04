@@ -2,13 +2,20 @@ import styles from "../styles/Home.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import { myLoader } from "../layouts/loader";
+import { useRouter } from "next/router";
 
 export default function Country({ data }) {
-  console.log(data);
+  const router = useRouter();
   const { flag, name, region, population, capital } = data;
+
+  const changeRoute = (event) => {
+    event.preventDefault();
+
+    router.push(`/country/${name}`, undefined, { shallow: true });
+  };
   return (
     <>
-      <Link href={`/country/${encodeURIComponent(name)}`}>
+      <Link href={`/country/${encodeURIComponent(name)}`} onClick={changeRoute}>
         <a>
           <div className={styles.country}>
             <div className={styles.flagContainer}>
