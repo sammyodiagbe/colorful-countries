@@ -53,7 +53,7 @@ export default function Country({ data }) {
               />
             </div>
             <div className={country.detailsContainer}>
-              <h2>{name}</h2>
+              <h2 className={country.countryName}>{name}</h2>
               {/* details */}
 
               <div className={country.details}>

@@ -245,12 +245,12 @@ main.container div.detailsContainer div.right {
   margin-top: 2em;
 }
 
-main.container div.detailsContainer div.details {
-  padding: 3em 0;
+main.container div.detailsContainer h2 {
+  padding-bottom: 2em;
 }
 
-main.container div.detailsContainer div.details h2 {
-  padding-bottom: 2em;
+main.container div.detailsContainer div.details {
+  padding: 3em 0;
 }
 
 main.container div.detailsContainer div.details p.detail {

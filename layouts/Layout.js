@@ -1,6 +1,6 @@
 import Nav from "./nav";
 import styles from "../styles/Home.module.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ThemeContext } from "../context/context";
 
 export default function Layout({ children }) {
@@ -8,7 +8,13 @@ export default function Layout({ children }) {
   const toggleTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
+    localStorage.setItem("theme", newTheme);
   };
+
+  useEffect(() => {
+    let theme = localStorage.getItem("theme");
+    setTheme(!theme ? "light" : theme);
+  }, []);
   return (
     <ThemeContext.Provider value={{ toggleTheme, theme }}>
       <main
