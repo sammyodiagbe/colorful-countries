@@ -94,7 +94,6 @@ export default function Home({ country_data }) {
                   className={styles.value}
                   readOnly
                   onFocus={() => setShowMenu(true)}
-                  onBlur={() => setShowMenu(false)}
                   ref={inputRef}
                   disabled={fetchingData}
                 />
@@ -149,17 +148,18 @@ export default function Home({ country_data }) {
             </div>
           </div>
         </div>
-        <div className={styles.countriesContainer}>
-          {fetchingData ? (
+
+        {fetchingData ? (
+          <div className={styles.spinnerContainer}>
             <div className={styles.spinner}>
               <span />
               <span />
               <span></span>
             </div>
-          ) : (
-            renderCountries
-          )}
-        </div>
+          </div>
+        ) : (
+          <div className={styles.countriesContainer}>{renderCountries}</div>
+        )}
       </div>
     </Layout>
   );
