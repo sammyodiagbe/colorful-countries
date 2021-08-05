@@ -79,6 +79,7 @@ export default function Home({ country_data }) {
                 placeholder="Search for a country"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
+                disabled={fetchingData}
               />
             </form>
           </div>
@@ -95,6 +96,7 @@ export default function Home({ country_data }) {
                   onFocus={() => setShowMenu(true)}
                   onBlur={() => setShowMenu(false)}
                   ref={inputRef}
+                  disabled={fetchingData}
                 />
                 <FaChevronDown className={styles.icon} />
               </div>
