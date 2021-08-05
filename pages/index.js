@@ -12,6 +12,7 @@ export default function Home({ country_data }) {
   const [showMenu, setShowMenu] = useState(false);
   const [countries, setCountries] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
+  const [fetchingData, isFetchingData] = useState(false);
   useEffect(() => {
     setCountries(country_data);
   }, []);
@@ -23,20 +24,28 @@ export default function Home({ country_data }) {
   const inputRef = useRef(null);
   const filterCountries = async (e) => {
     e.preventDefault();
-    const { filter } = e.target.dataset;
-    const response = await axios.get(
-      filter === "All"
-        ? `https://restcountries.eu/rest/v2/all`
-        : `https://restcountries.eu/rest/v2/region/${filter}`
-    );
-    setCountries(response.data);
-    inputRef.current.setAttribute("placeholder", filter);
-    setShowMenu(false);
+    try {
+      if (fetchingData) return;
+      isFetchingData(true);
+      const { filter } = e.target.dataset;
+      const response = await axios.get(
+        filter === "All"
+          ? `https://restcountries.eu/rest/v2/all`
+          : `https://restcountries.eu/rest/v2/region/${filter}`
+      );
+      setCountries(response.data);
+      isFetchingData(false);
+      inputRef.current.setAttribute("placeholder", filter);
+      setShowMenu(false);
+    } catch (err) {
+      isFetchingData(false);
+    }
   };
 
   const findCountry = async (event) => {
     event.preventDefault();
-
+    if (fetchingData) return;
+    isFetchingData(true);
     if (searchQuery.trim() === "") return;
     try {
       const response = await axios.get(
@@ -46,7 +55,10 @@ export default function Home({ country_data }) {
       );
       const data = response.data;
       setCountries(data);
-    } catch (err) {}
+      isFetchingData(false);
+    } catch (err) {
+      isFetchingData(false);
+    }
   };
 
   return (
@@ -81,6 +93,7 @@ export default function Home({ country_data }) {
                   className={styles.value}
                   readOnly
                   onFocus={() => setShowMenu(true)}
+                  onBlur={() => setShowMenu(false)}
                   ref={inputRef}
                 />
                 <FaChevronDown className={styles.icon} />
@@ -134,7 +147,17 @@ export default function Home({ country_data }) {
             </div>
           </div>
         </div>
-        <div className={styles.countriesContainer}>{renderCountries}</div>
+        <div className={styles.countriesContainer}>
+          {fetchingData ? (
+            <div className={styles.spinner}>
+              <span />
+              <span />
+              <span></span>
+            </div>
+          ) : (
+            renderCountries
+          )}
+        </div>
       </div>
     </Layout>
   );

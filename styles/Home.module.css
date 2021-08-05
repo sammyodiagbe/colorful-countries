@@ -1,3 +1,19 @@
+@-webkit-keyframes scale {
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    background: #2b3945;
+  }
+}
+
+@keyframes scale {
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    background: #2b3945;
+  }
+}
+
 main.container {
   background: #fafafa;
   color: #111517;
@@ -42,6 +58,48 @@ main.container nav.navigation div.container button {
 
 main.container nav.navigation div.container button .buttonIcon {
   margin-right: 0.5em;
+}
+
+main.container div.spinner {
+  width: 100px;
+  height: 50px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+}
+
+main.container div.spinner span {
+  height: 20px;
+  width: 20px;
+  border-radius: 30px;
+  -webkit-animation-name: scale;
+          animation-name: scale;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-transform: scale(0.2);
+          transform: scale(0.2);
+}
+
+main.container div.spinner span:nth-child(1) {
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+
+main.container div.spinner span:nth-child(2) {
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+}
+
+main.container div.spinner span:nth-child(3) {
+  -webkit-animation-delay: 5s;
+          animation-delay: 5s;
 }
 
 main.container div.inputAndFilterContainer {
